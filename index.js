@@ -3,6 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const app = express();
 const userroute = require("./routes/user");
+const postroute = require("./routes/post");
 require("dotenv").config();
 
 app.use(
@@ -27,6 +28,7 @@ mongoose
   });
 
 app.use("/user", userroute);
+app.use("/post", postroute);
 
 app.listen(3000, () => {
   console.log("server runnig.");
